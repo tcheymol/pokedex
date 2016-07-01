@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Pokedex</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="home">
+  <h2>Are you looking for a pokemon ?</h2>
+  <ion-searchbar (ionInput)="filterPokemons($event)"></ion-searchbar>
+
+  <ion-card *ngFor="let pokemon of pokemons" (click)="showPokemon(pokemon.name)">
+    <ion-item>
+        <p>{{pokemon?.name}}</p>
+    </ion-item>
+  </ion-card>
+</ion-content>
